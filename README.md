@@ -4,6 +4,12 @@ This is a little handy dandy VideoGame tuber (like as in its a vtuber made in a 
 
 To use, download the newest godot ver (currently this is for 4.6 but i think itll transfer over fine to 4.6.1 which is already out, if something goes wrong let me know ill try to fix it) and drag and drop the file once downloaded into your godot, If that doesn't work unzip it then drop it in , I don't remember exactly how to do it lol.
 
+this is the downloady area
+<img width="1914" height="1248" alt="image" src="https://github.com/user-attachments/assets/1e2bfde2-c261-4482-89fa-bab4f8bddc43" />
+
+
+
+
 This works best if you have some basic knowledge of godot but if you don't that's fine, follow a basic platformer making tutorial and you'll get a feel for the basics! Godot is super incredibly powerful (cough and free cough) so give it a try if you're new to it!
 
 i think i set this to the correct license, you can distrubite your own versions but please do so for free and share what changes you made, I don't really intend to monetize this since the whole reason I made it was because I wanted a free option though maybe I'll make a patreon or something. You don't need much programming knowledge to make this work i tried to keep it simple enough I wouldn't get stressed out using it lol and if anyone wants to make tutorials for using it, go right ahead! I really want this to be as acessable as possible!
@@ -27,3 +33,7 @@ https://silentstares.neocities.org
 tw for religious mention below the dotted line if you're uncomfortable with that, just ignore this bit! it's basically just me cheering you on, and if you're not religious I'm still cheering you on and the sentiment is the same, I hope you suceed and that your gifts make a place for you in the world, one where you feel happiest and your dreams come true <3 no matter who you are or what you believe, I want you to shine!
 ---------------------------------------------
 The bible says your skills will make a way for you in the world, so please go explore what you're capable of! I know you can do it and I'm cheering you all on!
+
+
+
+
