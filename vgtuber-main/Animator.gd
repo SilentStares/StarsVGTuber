@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 		
 		
 		if energy >= 59.2:
+			
 			if Dimension == 3:
 				Animator.play("Talk")
 			if Dimension == 2.5:
