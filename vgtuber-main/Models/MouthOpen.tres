@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://t0ts53s5hhib"]
+
+[ext_resource type="Texture2D" uid="uid://do7ykgo0h65mw" path="res://Models/Star mouth open.png" id="1_i7ofd"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 1
+alpha_antialiasing_edge = 1.0
+cull_mode = 2
+depth_draw_mode = 1
+no_depth_test = true
+albedo_texture = ExtResource("1_i7ofd")

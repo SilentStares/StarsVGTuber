@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cldymt1ddyinf"]
+
+[ext_resource type="Texture2D" uid="uid://bystapwn6pgps" path="res://Models/star eyes open.png" id="1_3a5du"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 1.0
+cull_mode = 2
+no_depth_test = true
+albedo_texture = ExtResource("1_3a5du")
