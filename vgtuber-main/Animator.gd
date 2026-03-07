@@ -32,7 +32,11 @@ func borderoff():
 			
 			
 			
+var Muted = false
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Mute"):
+		Muted = !Muted
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Muted)
 	if Input.is_action_just_pressed("3"):
 		$CSGBox3D.visible = !$CSGBox3D.visible
 		
@@ -57,6 +61,8 @@ func _process(delta: float) -> void:
 				$"star 2d".Talk()
 			if Dimension == 2:
 				$Control/AnimatedSprite2D.play("Talking")
+			if Dimension == 4:
+				$AnimatedSprite2D.play("Mouth Open")
 		else:
 			if Dimension == 3:
 				Animator.play("RESET")
@@ -64,6 +70,9 @@ func _process(delta: float) -> void:
 				$"star 2d".DontTalk()
 			if Dimension == 2:
 				$Control/AnimatedSprite2D.play("Not Talking")
+				
+			if Dimension == 4:
+				$AnimatedSprite2D.play("Mouth Shut")
 		#var prev_hz = 0
 		#var data = []
 		#for i in range(1, VU_COUNT + 1):
@@ -81,14 +90,14 @@ func _on_d_pressed() -> void:
 	$Control/AnimatedSprite2D.visible = true
 	$Star.visible = false
 	$"star 2d".visible = false
-	
+	$AnimatedSprite2D.visible = false
 
 func _on_3d_pressed() -> void:
 	Dimension = 3
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = true
 	$"star 2d".visible = false
-
+	$AnimatedSprite2D.visible = false
 
 func _on_button25d_pressed() -> void:
 	Dimension = 2.5
@@ -96,3 +105,19 @@ func _on_button25d_pressed() -> void:
 	$Star.visible = false
 	$"star 2d".visible = true
 	$"star 2d/AnimationPlayer".play("Sway")
+	$AnimatedSprite2D.visible = false
+
+func _on_button_2_pressed() -> void:
+	Dimension = 4
+	$Control/AnimatedSprite2D.visible = false
+	$Star.visible = false
+	$"star 2d".visible = false
+	$AnimatedSprite2D.visible = true
+
+
+
+
+func _on_button_3_pressed() -> void:
+	
+	Muted = !Muted
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Muted)
