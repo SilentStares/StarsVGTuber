@@ -1,5 +1,5 @@
 extends Node
-
+@export var Sensitivity = 59.2
 
 const VU_COUNT = 30
 const FREQ_MAX = 11050.0
@@ -13,6 +13,7 @@ var spectrum: AudioEffectSpectrumAnalyzerInstance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Control/AudioStreamRecord/Control/SpinBox.value = Sensitivity
 	
 	
 	spectrum = AudioServer.get_bus_effect_instance(0, 0)
@@ -35,12 +36,16 @@ func borderoff():
 var Muted = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Mute"):
+		
+		
+		
 		Muted = !Muted
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Muted)
 	if Input.is_action_just_pressed("3"):
 		$CSGBox3D.visible = !$CSGBox3D.visible
-		
-
+	
+	if Input.is_action_just_pressed("4"):
+			$Bg.visible = !$Bg.visible
 	
 	if Input.is_action_just_pressed("GuiHide"):
 		$Control/AudioStreamRecord/Control.visible = !$Control/AudioStreamRecord/Control.visible
@@ -52,8 +57,10 @@ func _process(delta: float) -> void:
 		var energy = clamp(MIN_DB + linear_to_db(maybeVolume) / MIN_DB, 0.0, 100.0)
 		print(energy)
 		
+		#the energy variable here just means how loud you are! If it's higher than 59.2, they talk!
+		#if your mic isin't the same level of sensitivity mine is, you can just adjust it!
 		
-		if energy >= 59.2:
+		if energy >= Sensitivity:
 			
 			if Dimension == 3:
 				Animator.play("Talk")
@@ -62,7 +69,10 @@ func _process(delta: float) -> void:
 			if Dimension == 2:
 				$Control/AnimatedSprite2D.play("Talking")
 			if Dimension == 4:
-				$AnimatedSprite2D.play("Mouth Open")
+				$"Ciero Tube".play("Mouth Open")
+				
+				
+		#else here means "if energy ISN'T greater than or equaal to 59.2 up there!
 		else:
 			if Dimension == 3:
 				Animator.play("RESET")
@@ -72,7 +82,7 @@ func _process(delta: float) -> void:
 				$Control/AnimatedSprite2D.play("Not Talking")
 				
 			if Dimension == 4:
-				$AnimatedSprite2D.play("Mouth Shut")
+				$"Ciero Tube".play("Mouth Shut")
 		#var prev_hz = 0
 		#var data = []
 		#for i in range(1, VU_COUNT + 1):
@@ -90,14 +100,14 @@ func _on_d_pressed() -> void:
 	$Control/AnimatedSprite2D.visible = true
 	$Star.visible = false
 	$"star 2d".visible = false
-	$AnimatedSprite2D.visible = false
+	$"Ciero Tube".visible = false
 
 func _on_3d_pressed() -> void:
 	Dimension = 3
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = true
 	$"star 2d".visible = false
-	$AnimatedSprite2D.visible = false
+	$"Ciero Tube".visible = false
 
 func _on_button25d_pressed() -> void:
 	Dimension = 2.5
@@ -105,14 +115,14 @@ func _on_button25d_pressed() -> void:
 	$Star.visible = false
 	$"star 2d".visible = true
 	$"star 2d/AnimationPlayer".play("Sway")
-	$AnimatedSprite2D.visible = false
+	$"Ciero Tube".visible = false
 
 func _on_button_2_pressed() -> void:
 	Dimension = 4
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = false
 	$"star 2d".visible = false
-	$AnimatedSprite2D.visible = true
+	$"Ciero Tube".visible = true
 
 
 
@@ -121,3 +131,7 @@ func _on_button_3_pressed() -> void:
 	
 	Muted = !Muted
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), Muted)
+
+
+func _on_spin_box_value_changed(value: float) -> void:
+	Sensitivity = value
