@@ -21,7 +21,7 @@ func _ready() -> void:
 
 var windowmode = false
 func _unhandled_input(event: InputEvent) -> void:
-		if Input.is_action_just_pressed("FullScreen"):
+		if Input.is_action_just_pressed("BorderedMode"):
 			
 			borderoff()
 func borderoff():
