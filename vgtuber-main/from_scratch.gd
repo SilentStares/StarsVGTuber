@@ -39,6 +39,7 @@ func borderoff():
 
 
 func _process(delta: float) -> void:
+
 	
 	if Input.is_action_just_pressed("Mute"):
 		Muted = !Muted
@@ -117,6 +118,7 @@ func _on_button_2_pressed() -> void:
 
 func _on_mr_h_pressed() -> void:
 	Dimension = 5
+	
 
 
 

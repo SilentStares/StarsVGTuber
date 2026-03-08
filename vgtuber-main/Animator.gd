@@ -114,6 +114,7 @@ func _on_3d_pressed() -> void:
 	$"Mr H".visible = false
 func _on_button25d_pressed() -> void:
 	Dimension = 2.5
+	
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = false
 	$"star 2d".visible = true

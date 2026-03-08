@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-
 func Talk():
 	$Armature/Skeleton3D/Cube.set_surface_override_material(2,MouthOpen)
 func DontTalk():
