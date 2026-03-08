@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://duq2krwmwjthu"]
+
+[ext_resource type="Texture2D" uid="uid://cj4aquo2s6ai5" path="res://Models/Mr H/mr h face mouth shut.png" id="1_tiqdx"]
+
+[resource]
+transparency = 4
+albedo_texture = ExtResource("1_tiqdx")

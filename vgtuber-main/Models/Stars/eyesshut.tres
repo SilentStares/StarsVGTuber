@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dxltfgdf5f0el"]
+
+[ext_resource type="Texture2D" uid="uid://embx4ev86ov" path="res://Models/Stars/star eyes shut.png" id="1_rw4v7"]
+
+[resource]
+transparency = 3
+alpha_hash_scale = 0.85
+alpha_antialiasing_mode = 2
+alpha_antialiasing_edge = 1.0
+no_depth_test = true
+albedo_texture = ExtResource("1_rw4v7")
+z_clip_scale = 0.56
+proximity_fade_distance = 0.01

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bni3itst4dqiq"]
+
+[ext_resource type="Texture2D" uid="uid://bdq7142xj6s0x" path="res://Models/Stars/star with poncho.png" id="1_p7k7w"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_p7k7w")

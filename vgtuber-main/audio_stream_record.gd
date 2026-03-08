@@ -22,16 +22,13 @@ func _on_record_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	
-	print(recording)
-	print(recording.format)
-	print(recording.mix_rate)
-	print(recording.stereo)
-	var data = recording.get_data()
-	print(data.size())
-	#$".".stream = recording
+	if recording:
+		var data = recording.get_data()
+	
 	$".".play()
 
 
 func _on_save_pressed() -> void:
-	var save_path = "The Recording"
-	recording.save_to_wav(save_path)
+	if recording:
+		var save_path = "The Recording"
+		recording.save_to_wav(save_path)

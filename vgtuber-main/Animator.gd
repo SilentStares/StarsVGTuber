@@ -13,7 +13,7 @@ var spectrum: AudioEffectSpectrumAnalyzerInstance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Control/AudioStreamRecord/Control/SpinBox.value = Sensitivity
+	$Control/AudioStreamRecord/Control/HBoxContainer/SpinBox.value = Sensitivity
 	
 	
 	spectrum = AudioServer.get_bus_effect_instance(0, 0)
@@ -71,7 +71,8 @@ func _process(delta: float) -> void:
 			if Dimension == 4:
 				$"Ciero Tube".play("Mouth Open")
 				
-				
+			if Dimension == 5:
+				$"Mr H".Talk()
 		#else here means "if energy ISN'T greater than or equaal to 59.2 up there!
 		else:
 			if Dimension == 3:
@@ -83,6 +84,8 @@ func _process(delta: float) -> void:
 				
 			if Dimension == 4:
 				$"Ciero Tube".play("Mouth Shut")
+			if Dimension == 5:
+				$"Mr H".DontTalk()
 		#var prev_hz = 0
 		#var data = []
 		#for i in range(1, VU_COUNT + 1):
@@ -101,14 +104,14 @@ func _on_d_pressed() -> void:
 	$Star.visible = false
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = false
-
+	$"Mr H".visible = false
 func _on_3d_pressed() -> void:
 	Dimension = 3
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = true
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = false
-
+	$"Mr H".visible = false
 func _on_button25d_pressed() -> void:
 	Dimension = 2.5
 	$Control/AnimatedSprite2D.visible = false
@@ -116,14 +119,23 @@ func _on_button25d_pressed() -> void:
 	$"star 2d".visible = true
 	$"star 2d/AnimationPlayer".play("Sway")
 	$"Ciero Tube".visible = false
-
+	$"Mr H".visible = false
 func _on_button_2_pressed() -> void:
 	Dimension = 4
 	$Control/AnimatedSprite2D.visible = false
 	$Star.visible = false
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = true
+	$"Mr H".visible = false
 
+func _on_mr_h_pressed() -> void:
+	$"Mr H/AnimationPlayer".play("Idle")
+	Dimension = 5
+	$Control/AnimatedSprite2D.visible = false
+	$Star.visible = false
+	$"star 2d".visible = false
+	$"Ciero Tube".visible = false
+	$"Mr H".visible = true
 
 
 
