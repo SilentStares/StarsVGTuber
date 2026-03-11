@@ -63,6 +63,8 @@ func _process(delta: float) -> void:
 		if energy >= Sensitivity:
 			
 			if Dimension == 3:
+				
+				
 				Animator.play("Talk")
 			if Dimension == 2.5:
 				$"star 2d".Talk()

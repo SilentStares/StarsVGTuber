@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Vgtuber Main"
-run/main_scene="uid://bm0w686gpgxd6"
+run/main_scene="uid://ddsfwae6obej4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://ec5hapvmahkq"
 
