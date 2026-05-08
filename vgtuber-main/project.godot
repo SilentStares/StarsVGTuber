@@ -81,6 +81,10 @@ Mute={
 ]
 }
 
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=2

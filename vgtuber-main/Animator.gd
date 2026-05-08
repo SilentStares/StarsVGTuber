@@ -1,5 +1,5 @@
 extends Node
-@export var Sensitivity = 59.2
+@export var Sensitivity : int = 59.2
 
 const VU_COUNT = 30
 const FREQ_MAX = 11050.0
@@ -13,6 +13,8 @@ var spectrum: AudioEffectSpectrumAnalyzerInstance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	
 	$Control/AudioStreamRecord/Control/HBoxContainer/SpinBox.value = Sensitivity
 	
 	
@@ -21,6 +23,7 @@ func _ready() -> void:
 
 
 var windowmode = false
+
 func _unhandled_input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("BorderedMode"):
 			
@@ -30,11 +33,17 @@ func borderoff():
 			
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS,windowmode)
 	windowmode = !windowmode
+
 			
 			
 			
 var Muted = false
+
+
+
 func _process(delta: float) -> void:
+
+	
 	if Input.is_action_just_pressed("Mute"):
 		
 		
@@ -46,6 +55,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("4"):
 			$Bg.visible = !$Bg.visible
+			
 	
 	if Input.is_action_just_pressed("GuiHide"):
 		$Control/AudioStreamRecord/Control.visible = !$Control/AudioStreamRecord/Control.visible
@@ -75,6 +85,9 @@ func _process(delta: float) -> void:
 				
 			if Dimension == 5:
 				$"Mr H".Talk()
+			if Dimension == 6:
+				$vgtuber/Mouth.play("Talk")
+				
 		#else here means "if energy ISN'T greater than or equaal to 59.2 up there!
 		else:
 			if Dimension == 3:
@@ -88,6 +101,8 @@ func _process(delta: float) -> void:
 				$"Ciero Tube".play("Mouth Shut")
 			if Dimension == 5:
 				$"Mr H".DontTalk()
+				if Dimension == 6:
+					$vgtuber/Mouth.play("DontTalk")
 		#var prev_hz = 0
 		#var data = []
 		#for i in range(1, VU_COUNT + 1):
@@ -107,6 +122,7 @@ func _on_d_pressed() -> void:
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = false
 	$"Mr H".visible = false
+	$vgtuber.visible = false
 func _on_3d_pressed() -> void:
 	Dimension = 3
 	$Control/AnimatedSprite2D.visible = false
@@ -114,6 +130,7 @@ func _on_3d_pressed() -> void:
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = false
 	$"Mr H".visible = false
+	$vgtuber.visible = false
 func _on_button25d_pressed() -> void:
 	Dimension = 2.5
 	
@@ -123,6 +140,7 @@ func _on_button25d_pressed() -> void:
 	$"star 2d/AnimationPlayer".play("Sway")
 	$"Ciero Tube".visible = false
 	$"Mr H".visible = false
+	$vgtuber.visible = false
 func _on_button_2_pressed() -> void:
 	Dimension = 4
 	$Control/AnimatedSprite2D.visible = false
@@ -130,6 +148,7 @@ func _on_button_2_pressed() -> void:
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = true
 	$"Mr H".visible = false
+	$vgtuber.visible = false
 
 func _on_mr_h_pressed() -> void:
 	$"Mr H/AnimationPlayer".play("Idle")
@@ -139,7 +158,11 @@ func _on_mr_h_pressed() -> void:
 	$"star 2d".visible = false
 	$"Ciero Tube".visible = false
 	$"Mr H".visible = true
+	$vgtuber.visible = false
 
+
+# on her button pressed
+	
 
 
 func _on_button_3_pressed() -> void:
@@ -150,3 +173,14 @@ func _on_button_3_pressed() -> void:
 
 func _on_spin_box_value_changed(value: float) -> void:
 	Sensitivity = value
+
+
+func _on_button_33333_pressed() -> void:
+	$vgtuber/AnimationPlayer.play("metarig_001|metarig_001Action_001")
+	Dimension = 6
+	$Control/AnimatedSprite2D.visible = false
+	$Star.visible = false
+	$"star 2d".visible = false
+	$"Ciero Tube".visible = false
+	$"Mr H".visible = false
+	$vgtuber.visible = true

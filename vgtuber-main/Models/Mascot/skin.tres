@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b6rhsfn1nxsqi"]
+
+[resource]
+diffuse_mode = 3
+albedo_color = Color(0.9255263, 0.8282696, 0.79883146, 1)
+metallic_specular = 0.98
+emission_enabled = true
+emission = Color(0.17375341, 0.12878472, 0.115117915, 1)
+emission_energy_multiplier = 3.11
+normal_scale = 16.0
+rim = 0.03
+rim_tint = 1.0
+ao_light_affect = 0.48
+subsurf_scatter_strength = 0.41
+subsurf_scatter_skin_mode = true
+backlight_enabled = true
