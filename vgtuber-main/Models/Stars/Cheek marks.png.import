@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbetex5edvmvn"
 path.s3tc="res://.godot/imported/Cheek marks.png-17d6c44268030f1e3c48c191747834f4.s3tc.ctex"
+path.etc2="res://.godot/imported/Cheek marks.png-17d6c44268030f1e3c48c191747834f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Stars/Cheek marks.png"
-dest_files=["res://.godot/imported/Cheek marks.png-17d6c44268030f1e3c48c191747834f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cheek marks.png-17d6c44268030f1e3c48c191747834f4.s3tc.ctex", "res://.godot/imported/Cheek marks.png-17d6c44268030f1e3c48c191747834f4.etc2.ctex"]
 
 [params]
 

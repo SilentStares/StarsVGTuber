@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdq7142xj6s0x"
 path.s3tc="res://.godot/imported/star with poncho.png-3ccadbdf7be7dafddf8ad7fc486d7b60.s3tc.ctex"
+path.etc2="res://.godot/imported/star with poncho.png-3ccadbdf7be7dafddf8ad7fc486d7b60.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Stars/star with poncho.png"
-dest_files=["res://.godot/imported/star with poncho.png-3ccadbdf7be7dafddf8ad7fc486d7b60.s3tc.ctex"]
+dest_files=["res://.godot/imported/star with poncho.png-3ccadbdf7be7dafddf8ad7fc486d7b60.s3tc.ctex", "res://.godot/imported/star with poncho.png-3ccadbdf7be7dafddf8ad7fc486d7b60.etc2.ctex"]
 
 [params]
 

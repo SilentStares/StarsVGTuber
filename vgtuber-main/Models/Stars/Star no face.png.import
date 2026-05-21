@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlrfivkxo5m3t"
 path.s3tc="res://.godot/imported/Star no face.png-29995820ee35c7afa9f48d1b087225d9.s3tc.ctex"
+path.etc2="res://.godot/imported/Star no face.png-29995820ee35c7afa9f48d1b087225d9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Stars/Star no face.png"
-dest_files=["res://.godot/imported/Star no face.png-29995820ee35c7afa9f48d1b087225d9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Star no face.png-29995820ee35c7afa9f48d1b087225d9.s3tc.ctex", "res://.godot/imported/Star no face.png-29995820ee35c7afa9f48d1b087225d9.etc2.ctex"]
 
 [params]
 

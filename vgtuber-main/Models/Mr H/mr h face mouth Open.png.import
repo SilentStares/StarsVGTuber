@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqht42bfv203r"
 path.s3tc="res://.godot/imported/mr h face mouth Open.png-975cc3e4e08c5f2dcc0c90b5861009ac.s3tc.ctex"
+path.etc2="res://.godot/imported/mr h face mouth Open.png-975cc3e4e08c5f2dcc0c90b5861009ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Mr H/mr h face mouth Open.png"
-dest_files=["res://.godot/imported/mr h face mouth Open.png-975cc3e4e08c5f2dcc0c90b5861009ac.s3tc.ctex"]
+dest_files=["res://.godot/imported/mr h face mouth Open.png-975cc3e4e08c5f2dcc0c90b5861009ac.s3tc.ctex", "res://.godot/imported/mr h face mouth Open.png-975cc3e4e08c5f2dcc0c90b5861009ac.etc2.ctex"]
 
 [params]
 

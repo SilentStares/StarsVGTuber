@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgb1dsau21kms"
 path.s3tc="res://.godot/imported/cool wings.png-79e502f9ddb0a9a6e72adc05dbdee8ff.s3tc.ctex"
+path.etc2="res://.godot/imported/cool wings.png-79e502f9ddb0a9a6e72adc05dbdee8ff.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Models/Stars/cool wings.png"
-dest_files=["res://.godot/imported/cool wings.png-79e502f9ddb0a9a6e72adc05dbdee8ff.s3tc.ctex"]
+dest_files=["res://.godot/imported/cool wings.png-79e502f9ddb0a9a6e72adc05dbdee8ff.s3tc.ctex", "res://.godot/imported/cool wings.png-79e502f9ddb0a9a6e72adc05dbdee8ff.etc2.ctex"]
 
 [params]
 

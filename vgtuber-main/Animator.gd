@@ -184,3 +184,8 @@ func _on_button_33333_pressed() -> void:
 	$"Ciero Tube".visible = false
 	$"Mr H".visible = false
 	$vgtuber.visible = true
+
+
+func _on_tp_pressed() -> void:
+	$Bg.visible = !$Bg.visible
+	$CSGBox3D.visible = !$CSGBox3D.visible
