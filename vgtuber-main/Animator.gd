@@ -87,8 +87,14 @@ func _process(delta: float) -> void:
 				
 			if Dimension == 5:
 				$"Mr H".Talk()
+				
+				
+				
 			if Dimension == 6:
+				
 				$vgtuber/Mouth.play("Talk")
+			
+				
 				
 		#else here means "if energy ISN'T greater than or equaal to 59.2 up there!
 		else:
@@ -195,7 +201,7 @@ func _on_tp_pressed() -> void:
 
 func _on_color_picker_button_color_changed(color: Color) -> void:
 	$CSGBox3D.get_material().albedo_color = Color(color)
-	
+	#$vgtuber/metarig_001/Skeleton3D/Hair2.get_surface_override_material(0).albedo_color = Color(color)
 
 
 func _on_bg_h2ide_pressed() -> void:
@@ -205,12 +211,12 @@ func _on_bg_h2ide_pressed() -> void:
 func _on_bg_22_hide_pressed() -> void:
 	$Bg.visible = !$Bg.visible
 
-
-func _on_hide_ui_pressed() -> void:
-	$Control/AudioStreamRecord/Control.visible = !$Control/AudioStreamRecord/Control.visible
 @export var cam1 : Camera3D
 @export var cam2 : Camera3D
 @export var CurrentCam : Camera3D
+func _on_hide_ui_pressed() -> void:
+	$Control/AudioStreamRecord/Control.visible = !$Control/AudioStreamRecord/Control.visible
+
 func _on_camswitch_pressed() -> void:
 	Camswitch()
 

@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://hqmo1roxlra0"]
+
+[ext_resource type="AudioStream" uid="uid://d36psmdne21i5" path="res://new_audio_stream_microphone.tres" id="1_ub1t1"]
+[ext_resource type="Script" uid="uid://b72e5fkcjf0r4" path="res://audio_stream_record.gd" id="2_y5v52"]
+[ext_resource type="Texture2D" uid="uid://ei7dqovodceg" path="res://Models/Stars/Star New Mouth Shut.png" id="3_8cimp"]
+[ext_resource type="Texture2D" uid="uid://deskmg88njxb3" path="res://Models/Stars/Star New.png" id="4_jjovn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq4tg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8cimp")
+}],
+"loop": true,
+"name": &"Not Talking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jjovn")
+}],
+"loop": true,
+"name": &"Talking",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_oq4tg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rmnha"]
+resource_name = "Sway"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.03490658503988659, 0.03490658503988659]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atafp"]
+_data = {
+&"RESET": SubResource("Animation_oq4tg"),
+&"Sway": SubResource("Animation_rmnha")
+}
+
+[node name="Control" type="Control" unique_id=1846915545]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hide ui" type="Button" parent="." unique_id=264877642]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 607.0
+offset_right = 1151.0
+offset_bottom = 638.0
+text = "Hide Ui"
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer2D" parent="." unique_id=1517347940]
+stream = ExtResource("1_ub1t1")
+script = ExtResource("2_y5v52")
+
+[node name="Control" type="Control" parent="AudioStreamRecord" unique_id=18321020]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AudioStreamRecord/Control" unique_id=1491474583]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 8.000015
+offset_right = 550.0
+offset_bottom = 39.000015
+scale = Vector2(0.77248406, 0.77248406)
+
+[node name="Record" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1461437786]
+visible = false
+layout_mode = 2
+tooltip_text = "click this to start recording audio(currently not working)"
+text = "Record"
+
+[node name="Play" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1201824230]
+layout_mode = 2
+tooltip_text = "click to begin audio lipsynch, no longer crashes at random!"
+text = "Begin Audio Lipsync!"
+
+[node name="Save" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=253563957]
+visible = false
+layout_mode = 2
+tooltip_text = "currently does not work"
+text = "save"
+
+[node name="Button3" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1706347478]
+layout_mode = 2
+text = "Mute"
+
+[node name="Label" type="Label" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1167469630]
+layout_mode = 2
+text = "Mic Sensitivity :"
+
+[node name="SpinBox" type="SpinBox" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1052161641]
+layout_mode = 2
+tooltip_text = "Sensitivity setting for your mic! try adjusting this if it isn't working. The default is 59.2 in case you want to reset it!"
+step = 0.1
+value = 59.2
+allow_greater = true
+allow_lesser = true
+update_on_text_changed = true
+
+[node name="Tp" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=618319447]
+layout_mode = 2
+text = "Transparent bg and other bg details"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=479845179]
+layout_mode = 2
+text = "Color picker for bg"
+color = Color(0.7921569, 0.6666667, 0.78431374, 1)
+
+[node name="Bg hide" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=1582565762]
+layout_mode = 2
+text = "Hide Bg"
+
+[node name="Bg2 hide" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=612259468]
+layout_mode = 2
+text = "Hide Bg2"
+
+[node name="Camswitch" type="Button" parent="AudioStreamRecord/Control/HBoxContainer" unique_id=2092427954]
+layout_mode = 2
+text = "Switch cam"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AudioStreamRecord/Control" unique_id=625446601]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioStreamRecord/Control/HBoxContainer2" unique_id=1196102752]
+layout_mode = 2
+
+[node name="2D" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=169116431]
+layout_mode = 2
+text = "2D"
+
+[node name="Button" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=264636820]
+layout_mode = 2
+text = "2.5
+"
+
+[node name="3D" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=1280681667]
+layout_mode = 2
+text = "3D"
+
+[node name="Mr H" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=1435047398]
+layout_mode = 2
+text = "Mr H!"
+
+[node name="Button2" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=1959585841]
+layout_mode = 2
+text = "Ciero Tube"
+
+[node name="Button3" type="Button" parent="AudioStreamRecord/Control/HBoxContainer2/VBoxContainer" unique_id=593289852]
+layout_mode = 2
+text = "Mascot!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1786055590]
+visible = false
+position = Vector2(540.0001, 419.00006)
+scale = Vector2(0.212, 0.212)
+sprite_frames = SubResource("SpriteFrames_oq4tg")
+animation = &"Not Talking"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D" unique_id=2140706605]
+libraries/ = SubResource("AnimationLibrary_atafp")
+
+[connection signal="pressed" from="AudioStreamRecord/Control/HBoxContainer/Record" to="AudioStreamRecord" method="_on_record_pressed"]
+[connection signal="pressed" from="AudioStreamRecord/Control/HBoxContainer/Play" to="AudioStreamRecord" method="_on_play_pressed"]
+[connection signal="pressed" from="AudioStreamRecord/Control/HBoxContainer/Save" to="AudioStreamRecord" method="_on_save_pressed"]
